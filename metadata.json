@@ -1,0 +1,6 @@
+{
+  "name": "MMT Trip Assistant",
+  "description": "AI-powered multi-turn conversational trip planner with smart budget filtering, authentic curated catalogues, and unbiased day-by-day itineraries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

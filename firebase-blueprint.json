@@ -1,0 +1,47 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "type": "object",
+      "description": "User profile with authentication and creation details",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" }
+      },
+      "required": ["uid", "email", "createdAt"]
+    },
+    "ItineraryRecord": {
+      "title": "ItineraryRecord",
+      "type": "object",
+      "description": "Stored itinerary with user inputs, generated JSON, and review status",
+      "properties": {
+        "uid": { "type": "string" },
+        "destination": { "type": "string" },
+        "dates": { "type": "string" },
+        "budget": { "type": "number" },
+        "partySize": { "type": "string" },
+        "interests": { "type": "array", "items": { "type": "string" } },
+        "generatedItinerary": { "type": "object" },
+        "explanationText": { "type": "string" },
+        "explanationStatus": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "offbeatMode": { "type": "boolean" },
+        "totalEstimatedCost": { "type": "number" }
+      },
+      "required": ["uid", "destination", "dates", "budget", "partySize", "generatedItinerary", "explanationText", "explanationStatus", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/userProfiles/{uid}": {
+      "schema": "UserProfile",
+      "description": "User profile collection keyed by uid"
+    },
+    "/itineraries/{itineraryId}": {
+      "schema": "ItineraryRecord",
+      "description": "Global itineraries collection storing trip plans with user uid"
+    }
+  }
+}
